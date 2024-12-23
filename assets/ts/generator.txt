@@ -1,41 +1,23 @@
 import { MegaGenerator } from '@megaorm/gen';
 
 /**
- * `[className]`
- *
- * This is a base generator template for managing database tables. 
- * In this class, you define the schema for the `[tableName]` table, 
- * and you can create or drop the table anytime using the provided methods.
- *
- * - To create the table: Simply call the `create` method, after you define your schema.
- * - To drop the table: Use the `drop` method to remove the table from the database.
- *
- * If you are using `MegaExecutor`, you can manage all tables effortlessly:
- * - `generate`: Create all tables.
- * - `rollback`: Drop the most recently created tables.
- * - `reset`: Drop all tables and start fresh.
+ * This is a base generator template for managing database tables.
  *
  * @extends `MegaGenerator`
  */
 class [className] extends MegaGenerator {
   /**
-   * Creates a generator instance and sets the associated table name.
+   * Creates a generator instance.
    */
   constructor() {
     super();
 
-    // Set the table name associated with this generator.
+    // The table name associated with this generator.
     this.set.table('[tableName]');
   }
 
   /**
    * Creates the `[tableName]` table.
-   *
-   * - Step 1: Use `this.column(name)` to create a column instance.
-   * - Step 2: Chain methods to specify the column's type and constraints.
-   * - Step 3: Pass your column to `this.schema` to generate and execute a `CREATE TABLE` query.
-   *
-   * @returns Resolved promise when the table is successfully created.
    */
   public create(): Promise<void> {
     return this.schema(
