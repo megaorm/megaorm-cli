@@ -1,6 +1,6 @@
 {
   "name": "@megaorm/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package allows you to communicate with MegaORM via commands directly from the command line interface (CLI).",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
