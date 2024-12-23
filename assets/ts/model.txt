@@ -1,0 +1,28 @@
+import { MegaModel } from '@megaorm/model';
+
+/**
+ * Represents a `[className]` model.
+ *
+ * Each instance of this model corresponds to a row in the `[tableName]` table.
+ * Use this model to perform CRUD (Create, Read, Update, Delete) operations
+ * seamlessly on the associated table.
+ *
+ * @extends `MegaModel`
+ */
+export class [className] extends MegaModel {
+  /**
+   * The name of the table associated with this model.
+   */
+  protected static table = '[tableName]';
+
+  /**
+   * List of columns to ignore during updates.
+   *
+   * These columns will not be modified when calling update methods on the model.
+   */
+  protected static ignore = ['id', 'created_at', 'updated_at'];
+
+  /**
+   * Additional custom methods or overrides can be defined here...
+   */
+}

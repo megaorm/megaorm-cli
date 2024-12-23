@@ -1,0 +1,43 @@
+{
+  "name": "@megaorm/cli",
+  "version": "1.0.0",
+  "description": "This package allows you to communicate with MegaORM via commands directly from the command line interface (CLI).",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "Mohamed",
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/megaorm/megaorm-cli.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "test": "npx jest --coverage",
+    "build": "tsc"
+  },
+  "keywords": [
+    "megaorm-cli",
+    "cli",
+    "megaorm",
+    "commands",
+    "megaorm-commands",
+    "megaorm-cmd",
+    "cmd",
+    "command-line-interface"
+  ],
+  "dependencies": {
+    "@megaorm/builder": "^1.0.0",
+    "@megaorm/cluster": "^1.0.0",
+    "@megaorm/config": "^1.1.0",
+    "@megaorm/errors": "^1.0.0",
+    "@megaorm/gen": "^1.0.0",
+    "@megaorm/seeder": "^1.0.0",
+    "@megaorm/test": "^1.2.0",
+    "@megaorm/text": "^1.1.1"
+  }
+}

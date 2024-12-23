@@ -1,0 +1,59 @@
+import { MegaSeeder } from '@megaorm/seeder';
+import { Row } from '@megaorm/driver';
+
+/**
+ * `[className]`
+ *
+ * This class is responsible for populating the `[tableName]` table with fake data.
+ * Use `this.get.faker()` to generate realistic, random data for each row.
+ *
+ * - To generate and insert data: Call the `seed` method after defining your layout.
+ * - To clear the table: Use the `clear` method to remove all data from the table.
+ *
+ * The `layout` method is executed multiple times, based on the number of rows 
+ * specified by the `this.set.rows(number)` method, to generate fake data for each row.
+ *
+ * If you're using `MegaExecutor`, you can manage seeding for all tables at once:
+ * - `seed`: Insert data into all tables.
+ * - `clear`: Remove data from all tables.
+ *
+ * @extends MegaSeeder
+ */
+class [className] extends MegaSeeder {
+  /**
+   * Creates a new [className] instance.
+   */
+  constructor() {
+    super();
+
+    this.set.rows(10); // Insert 10 rows
+    this.set.table('[tableName]'); // Set table name
+  }
+
+   /**
+   * Defines the layout for a single row to be inserted into the `[tableName]` table.
+   *
+   * This method will be called the number of times specified by `this.set.rows(number)`
+   * to generate the necessary fake data.
+   *
+   * The returned row(s) will be used to generate a bulk insert SQL statement that will be
+   * executed to populate the table with fake data.
+   *
+   * @returns A row of fake data matching the table schema.
+   */
+  public layout(): Row {
+    const faker = this.get.faker(); // Access the MegaFaker instance
+
+    return {
+      // Example of generating fake data for various columns
+      name: faker.firstName(),  // Generates a random first name
+      email: faker.email(),     // Generates a random email address
+      address: faker.address(), // Generates a random address
+      phone: faker.phone('+1 (###) ###-####'), // Generates a random phone number
+      created_at: faker.datetime(),  // Generates a random datetime
+      updated_at: faker.datetime(),  // Generates a random datetime
+    };
+  }
+}
+
+export default new [className](); // export new instance

@@ -1,0 +1,32 @@
+import { MegaCommand } from '@megaorm/cli';
+
+/**
+ * `[className]`
+ *
+ * This is a base command template for creating a custom command.
+ * In this class, you define the command syntax (arguments, options)
+ * and the logic to execute when the command is run.
+ *
+ * - Define your command's syntax in `syntax`.
+ * - Implement the command logic in `exec()`.
+ *
+ * @extends `MegaCommand`
+ */
+export class [className] extends MegaCommand {
+  /**
+  * Define the command syntax, as the following:
+  * - `<! name>`: required argument
+  * - `<? name>`: optional argument
+  * - `<- name>`: option
+  */
+  protected static syntax = '';
+
+  /**
+   * This method is called when the command is executed.
+   * 
+   * @returns No return value is required, but in case a promise is returned, it will be handled.
+   */
+  public static exec(): any {
+    // Your command logic here...
+  }
+}
