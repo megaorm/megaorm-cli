@@ -141,7 +141,10 @@ function group(paths: string[]): string[][] {
     storage[number].push(path);
   });
 
-  return Object.values(storage);
+  // Return paths in the correct order
+  return Object.keys(storage)
+    .sort((a, b) => parseInt(a) - parseInt(b))
+    .map((key) => storage[key]);
 }
 
 /**
